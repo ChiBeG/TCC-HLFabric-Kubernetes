@@ -1,0 +1,28 @@
+test:
+  name: resiliencia-vinculo
+  workers:
+    number: 2
+  rounds:
+  - label: preparacao
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/emitir.js
+      arguments:
+        serie: 115
+    txNumber: 1000
+  - label: resiliencia
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/misto.js
+      arguments:
+        serie: 116
+        serieConsulta: 115
+        populacao: 500
+        fracaoEscrita: 0.5
+    txDuration: 300

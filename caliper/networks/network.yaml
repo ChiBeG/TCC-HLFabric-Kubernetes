@@ -1,0 +1,30 @@
+# Conexão do Caliper 0.6 (binding fabric:2.4 = Fabric Gateway) com a rede.
+# Caminhos relativos ao workspace (~/caliper-vinculo), preenchido por scripts/09-caliper.sh.
+# Org1 (Universidade) emite e revoga; Org2 (Verificador) consulta.
+name: vinculo
+version: "2.0.0"
+caliper:
+  blockchain: fabric
+channels:
+  - channelName: canal-vinculo
+    contracts:
+      - id: vinculo
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+        - name: caliper
+          clientPrivateKey: { path: identities/org1/key.pem }
+          clientSignedCert: { path: identities/org1/cert.pem }
+    connectionProfile:
+      path: profiles/org1-ccp.yaml
+      discover: false
+  - mspid: Org2MSP
+    identities:
+      certificates:
+        - name: caliper
+          clientPrivateKey: { path: identities/org2/key.pem }
+          clientSignedCert: { path: identities/org2/cert.pem }
+    connectionProfile:
+      path: profiles/org2-ccp.yaml
+      discover: false

@@ -1,0 +1,15 @@
+t,tipo,nome,ready,no,fase,t_rel_s
+1791158769.2148678,no,control-plane,True,control-plane,,-84.5
+1791158769.2148678,no,worker1,True,worker1,,-84.5
+1791158769.2148678,no,worker2,True,worker2,,-84.5
+1791158769.2148678,pod,hlf-operator-controller-manager-b76b99974-f6zf8,True,worker2,Running,-84.5
+1791158769.2148678,pod,ord-ca-7875c75dff-wgdr8,True,worker2,Running,-84.5
+1791158769.2148678,pod,ord-node1-7c9b6f7cd-jhcm4,True,worker1,Running,-84.5
+1791158769.2148678,pod,org1-ca-5fb854bd6c-srcms,True,worker2,Running,-84.5
+1791158769.2148678,pod,org1-peer0-bfdd77858-w8f8w,True,worker1,Running,-84.5
+1791158769.2148678,pod,org2-ca-6f686f86dc-x545h,True,worker2,Running,-84.5
+1791158769.2148678,pod,org2-peer0-64877f79fd-bthpj,True,worker2,Running,-84.5
+1791158769.2148678,pod,vinculo-6547858897-26c7n,True,worker2,Running,-84.5
+1791158854.7209284,pod,org1-peer0-bfdd77858-bcth7,False,worker1,Pending,1.1
+1791158854.7209284,pod,org1-peer0-bfdd77858-w8f8w,,,removido,1.1
+1791158914.8620217,pod,org1-peer0-bfdd77858-bcth7,True,worker1,Running,61.2

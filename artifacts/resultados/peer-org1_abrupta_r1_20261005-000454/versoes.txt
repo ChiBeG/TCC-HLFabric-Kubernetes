@@ -1,0 +1,16 @@
+caliper=0.6.0 (fabric:2.4)
+chaincode=vinculo-cc:1.0 version=1.0 sequence=1
+fabric-ca=1.5.7
+fabric-orderer=2.5.5
+fabric-peer=2.5.5
+flannel=ghcr.io/flannel-io/flannel:v0.28.9
+go=go1.22.12
+helm=v3.16.4+g7877b45
+hlf-operator=ghcr.io/hyperledger-bevel/bevel-operator-fabric:v1.14.0
+istio=1.20.0
+kube-prometheus-stack=kube-prometheus-stack-91.9.0
+kubectl-hlf=1.14.0 (binário fixado)
+kubernetes=v1.30.14
+local-path=docker.io/rancher/local-path-provisioner:v0.0.37
+metallb=v0.14.3
+node=v22.23.3

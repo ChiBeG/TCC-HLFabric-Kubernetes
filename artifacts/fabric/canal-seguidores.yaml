@@ -1,0 +1,123 @@
+apiVersion: hlf.kungfusoftware.es/v1alpha1
+kind: FabricFollowerChannel
+metadata:
+  name: canal-vinculo-org1
+spec:
+  name: canal-vinculo
+  mspId: Org1MSP
+  hlfIdentity:
+    secretName: org1-admin
+    secretKey: user.yaml
+    secretNamespace: default
+  anchorPeers:
+  - host: org1-peer0.default
+    port: 7051
+  peersToJoin:
+  - name: org1-peer0
+    namespace: default
+  externalPeersToJoin: []
+  orderers:
+  - url: grpcs://ord-node1.default:7050
+    certificate: '-----BEGIN CERTIFICATE-----
+
+      MIIDMTCCAtigAwIBAgIUbd/5bqo8b6g92T0lEUx0G6uml2MwCgYIKoZIzj0EAwIw
+
+      bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+
+      YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+
+      MAwGA1UEAxMFdGxzY2EwHhcNMjYxMDAzMjMwNzI0WhcNMjcxMTIyMTUwNjAwWjAk
+
+      MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+
+      AQYIKoZIzj0DAQcDQgAE0+/2iId3V0hP/eBRAMg+MDHX33lDcU3Zx0wEl8dWnoga
+
+      EYGSvwVzHc7tqi8oTmizub0yv+MnkPCIc36wqgf3lqOCAZ0wggGZMA4GA1UdDwEB
+
+      /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+
+      BAIwADAdBgNVHQ4EFgQUuRm1MZXd5XK+o5f5aFzSATXb2B4wKwYDVR0jBCQwIoAg
+
+      2ijH4sMwzo+SV7vgQ/TdcgV3eOSOTFogVHL6J8yHhhAwgbAGA1UdEQSBqDCBpYIJ
+
+      bG9jYWxob3N0gglvcmQtbm9kZTGCEW9yZC1ub2RlMS5kZWZhdWx0ghdvcmRlcmVy
+
+      MC1vcmQubG9jYWxoby5zdIIdYWRtaW4tb3JkZXJlcjAtb3JkLmxvY2FsaG8uc3SC
+
+      F29yZGVyZXIwLW9yZC5sb2NhbGhvLnN0gh1hZG1pbi1vcmRlcmVyMC1vcmQubG9j
+
+      YWxoby5zdIcEfwAAAYcEwKg4CjBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5B
+
+      ZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZGVyZXIiLCJoZi5U
+
+      eXBlIjoib3JkZXJlciJ9fTAKBggqhkjOPQQDAgNHADBEAiBqeuUsnuc5QqJ5QEs1
+
+      VjUXZjBl0Ihlq5szZBS/HrvcGAIgQWdMhNZOlv3pJBhInZXdqL85CtymuZGkL0vF
+
+      7Kvjv+A=
+
+      -----END CERTIFICATE-----
+
+      '
+---
+apiVersion: hlf.kungfusoftware.es/v1alpha1
+kind: FabricFollowerChannel
+metadata:
+  name: canal-vinculo-org2
+spec:
+  name: canal-vinculo
+  mspId: Org2MSP
+  hlfIdentity:
+    secretName: org2-admin
+    secretKey: user.yaml
+    secretNamespace: default
+  anchorPeers:
+  - host: org2-peer0.default
+    port: 7051
+  peersToJoin:
+  - name: org2-peer0
+    namespace: default
+  externalPeersToJoin: []
+  orderers:
+  - url: grpcs://ord-node1.default:7050
+    certificate: '-----BEGIN CERTIFICATE-----
+
+      MIIDMTCCAtigAwIBAgIUbd/5bqo8b6g92T0lEUx0G6uml2MwCgYIKoZIzj0EAwIw
+
+      bTELMAkGA1UEBhMCRVMxETAPBgNVBAcTCEFsaWNhbnRlMREwDwYDVQQJEwhBbGlj
+
+      YW50ZTEZMBcGA1UEChMQS3VuZyBGdSBTb2Z0d2FyZTENMAsGA1UECxMEVGVjaDEO
+
+      MAwGA1UEAxMFdGxzY2EwHhcNMjYxMDAzMjMwNzI0WhcNMjcxMTIyMTUwNjAwWjAk
+
+      MRAwDgYDVQQLEwdvcmRlcmVyMRAwDgYDVQQDEwdvcmRlcmVyMFkwEwYHKoZIzj0C
+
+      AQYIKoZIzj0DAQcDQgAE0+/2iId3V0hP/eBRAMg+MDHX33lDcU3Zx0wEl8dWnoga
+
+      EYGSvwVzHc7tqi8oTmizub0yv+MnkPCIc36wqgf3lqOCAZ0wggGZMA4GA1UdDwEB
+
+      /wQEAwIDqDAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/
+
+      BAIwADAdBgNVHQ4EFgQUuRm1MZXd5XK+o5f5aFzSATXb2B4wKwYDVR0jBCQwIoAg
+
+      2ijH4sMwzo+SV7vgQ/TdcgV3eOSOTFogVHL6J8yHhhAwgbAGA1UdEQSBqDCBpYIJ
+
+      bG9jYWxob3N0gglvcmQtbm9kZTGCEW9yZC1ub2RlMS5kZWZhdWx0ghdvcmRlcmVy
+
+      MC1vcmQubG9jYWxoby5zdIIdYWRtaW4tb3JkZXJlcjAtb3JkLmxvY2FsaG8uc3SC
+
+      F29yZGVyZXIwLW9yZC5sb2NhbGhvLnN0gh1hZG1pbi1vcmRlcmVyMC1vcmQubG9j
+
+      YWxoby5zdIcEfwAAAYcEwKg4CjBbBggqAwQFBgcIAQRPeyJhdHRycyI6eyJoZi5B
+
+      ZmZpbGlhdGlvbiI6IiIsImhmLkVucm9sbG1lbnRJRCI6Im9yZGVyZXIiLCJoZi5U
+
+      eXBlIjoib3JkZXJlciJ9fTAKBggqhkjOPQQDAgNHADBEAiBqeuUsnuc5QqJ5QEs1
+
+      VjUXZjBl0Ihlq5szZBS/HrvcGAIgQWdMhNZOlv3pJBhInZXdqL85CtymuZGkL0vF
+
+      7Kvjv+A=
+
+      -----END CERTIFICATE-----
+
+      '

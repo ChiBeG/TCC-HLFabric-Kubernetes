@@ -1,0 +1,95 @@
+apiVersion: hlf.kungfusoftware.es/v1alpha1
+kind: FabricOrdererNode
+metadata:
+  creationTimestamp: null
+  name: ord-node1
+  namespace: default
+spec:
+  adminGatewayApi: null
+  adminIstio:
+    hosts:
+    - admin-orderer0-ord.localho.st
+    ingressGateway: ingressgateway
+    port: 443
+  adminTraefik: null
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - worker1
+  bootstrapMethod: none
+  channelParticipationEnabled: true
+  credentialStore: kubernetes
+  env: null
+  gatewayApi: null
+  genesis: ''
+  grpcProxy: null
+  hostAliases: null
+  image: hyperledger/fabric-orderer
+  imagePullSecrets: null
+  istio:
+    hosts:
+    - orderer0-ord.localho.st
+    ingressGateway: ingressgateway
+    port: 443
+  mspID: OrdererMSP
+  podAnnotations: null
+  podLabels: null
+  pullPolicy: IfNotPresent
+  replicas: 1
+  resources: {}
+  secret:
+    enrollment:
+      component:
+        cahost: ord-ca.localho.st
+        caname: ca
+        caport: 443
+        catls:
+          cacert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNXVENDQWYrZ0F3SUJBZ0lSQUlyei9mWFh5NEFZc3ZUYWpJUEhaZFV3Q2dZSUtvWkl6ajBFQXdJd1VqRVQKTUJFR0ExVUVCaE1LUTJGc2FXWnZjbTVwWVRFSk1BY0dBMVVFQnhNQU1Ra3dCd1lEVlFRSkV3QXhGREFTQmdOVgpCQW9UQzBoNWNHVnliR1ZrWjJWeU1ROHdEUVlEVlFRTEV3WkdZV0p5YVdNd0hoY05Nall4TURBek1qTXdOekkwCldoY05Nell4TURBME1qTXdOekkwV2pCU01STXdFUVlEVlFRR0V3cERZV3hwWm05eWJtbGhNUWt3QndZRFZRUUgKRXdBeENUQUhCZ05WQkFrVEFERVVNQklHQTFVRUNoTUxTSGx3WlhKc1pXUm5aWEl4RHpBTkJnTlZCQXNUQmtaaApZbkpwWXpCWk1CTUdCeXFHU000OUFnRUdDQ3FHU000OUF3RUhBMElBQk9jbGozMFZmRnFxMEpCN05NcU9xeGZGCi9ZeHVHdS82UCtTN01Sam4xWjRudjhIRmdzQ1dab2lHLzBSVCtheitBeFZpbktJRkVZd3REQW1aQndhZGMwU2oKZ2JVd2diSXdEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRgpCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNDTmpyN1hKb25RdWpQNVc0bmZIbWxQCldJTlpwSWdGaHBvTFg2cS9DNWNqS3pCRkJnTlZIUkVFUGpBOGdnbHNiMk5oYkdodmMzU0NCbTl5WkMxallZSU8KYjNKa0xXTmhMbVJsWm1GMWJIU0NFVzl5WkMxallTNXNiMk5oYkdodkxuTjBod1IvQUFBQk1Bb0dDQ3FHU000OQpCQU1DQTBnQU1FVUNJUUQ2Ym5ySi9GMW5jcnhpWWRUdnpVaTJ4ZTlvVWYrdzR6OVZzOHBlMWdlUmlRSWdkTVlSCnFvWG5VTm1wUFYxb3NnTGw0aVpITkpMZFJmbW5UTVhPdTNyamtTaz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+          secretRef: null
+        enrollid: orderer
+        enrollsecret: ordererpw
+        external: null
+        vault: null
+      tls:
+        cahost: ord-ca.localho.st
+        caname: tlsca
+        caport: 443
+        catls:
+          cacert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNXVENDQWYrZ0F3SUJBZ0lSQUlyei9mWFh5NEFZc3ZUYWpJUEhaZFV3Q2dZSUtvWkl6ajBFQXdJd1VqRVQKTUJFR0ExVUVCaE1LUTJGc2FXWnZjbTVwWVRFSk1BY0dBMVVFQnhNQU1Ra3dCd1lEVlFRSkV3QXhGREFTQmdOVgpCQW9UQzBoNWNHVnliR1ZrWjJWeU1ROHdEUVlEVlFRTEV3WkdZV0p5YVdNd0hoY05Nall4TURBek1qTXdOekkwCldoY05Nell4TURBME1qTXdOekkwV2pCU01STXdFUVlEVlFRR0V3cERZV3hwWm05eWJtbGhNUWt3QndZRFZRUUgKRXdBeENUQUhCZ05WQkFrVEFERVVNQklHQTFVRUNoTUxTSGx3WlhKc1pXUm5aWEl4RHpBTkJnTlZCQXNUQmtaaApZbkpwWXpCWk1CTUdCeXFHU000OUFnRUdDQ3FHU000OUF3RUhBMElBQk9jbGozMFZmRnFxMEpCN05NcU9xeGZGCi9ZeHVHdS82UCtTN01Sam4xWjRudjhIRmdzQ1dab2lHLzBSVCtheitBeFZpbktJRkVZd3REQW1aQndhZGMwU2oKZ2JVd2diSXdEZ1lEVlIwUEFRSC9CQVFEQWdHbU1CMEdBMVVkSlFRV01CUUdDQ3NHQVFVRkJ3TUNCZ2dyQmdFRgpCUWNEQVRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUNrR0ExVWREZ1FpQkNDTmpyN1hKb25RdWpQNVc0bmZIbWxQCldJTlpwSWdGaHBvTFg2cS9DNWNqS3pCRkJnTlZIUkVFUGpBOGdnbHNiMk5oYkdodmMzU0NCbTl5WkMxallZSU8KYjNKa0xXTmhMbVJsWm1GMWJIU0NFVzl5WkMxallTNXNiMk5oYkdodkxuTjBod1IvQUFBQk1Bb0dDQ3FHU000OQpCQU1DQTBnQU1FVUNJUUQ2Ym5ySi9GMW5jcnhpWWRUdnpVaTJ4ZTlvVWYrdzR6OVZzOHBlMWdlUmlRSWdkTVlSCnFvWG5VTm1wUFYxb3NnTGw0aVpITkpMZFJmbW5UTVhPdTNyamtTaz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+          secretRef: null
+        csr:
+          cn: ''
+          hosts:
+          - 127.0.0.1
+          - localhost
+          - 192.168.56.10
+          - ord-node1
+          - ord-node1.default
+          - orderer0-ord.localho.st
+          - admin-orderer0-ord.localho.st
+        enrollid: orderer
+        enrollsecret: ordererpw
+        external: null
+        vault: null
+  service:
+    type: ClusterIP
+  serviceMonitor:
+    enabled: true
+    interval: 5s
+    scrapeTimeout: 4s
+    sampleLimit: 0
+    labels:
+      release: prometheus
+  storage:
+    accessMode: ReadWriteOnce
+    size: 2Gi
+    storageClass: local-path
+  tag: 2.5.5
+  tolerations: null
+  traefik: null
+  updateCertificateTime: null

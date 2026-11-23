@@ -1,0 +1,166 @@
+apiVersion: hlf.kungfusoftware.es/v1alpha1
+kind: FabricPeer
+metadata:
+  creationTimestamp: null
+  name: org2-peer0
+  namespace: default
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - worker2
+  couchDBexporter: null
+  couchdb:
+    externalCouchDB: null
+    image: couchdb
+    password: couchdb
+    pullPolicy: ''
+    tag: 3.1.1
+    user: couchdb
+  credentialStore: kubernetes
+  deliveryClientaddressOverrides: null
+  discovery:
+    period: 60s
+    touchPeriod: 60s
+  dockerSocketPath: ''
+  env: null
+  external_chaincode_builder: false
+  externalBuilders:
+  - name: ccaas_builder
+    path: /opt/hyperledger/ccaas_builder
+    propagateEnvironment:
+    - CHAINCODE_AS_A_SERVICE_BUILDER_CONFIG
+  externalEndpoint: peer0-org2.localho.st:443
+  fsServer: null
+  gatewayApi:
+    gatewayName: hlf-gateway
+    gatewayNamespace: default
+    port: 443
+  gossip:
+    aliveExpirationTimeout: ''
+    aliveTimeInterval: ''
+    bootstrap: ''
+    endpoint: ''
+    externalEndpoint: peer0-org2.localho.st:443
+    orgLeader: true
+    reconnectInterval: ''
+    responseWaitTime: ''
+    useLeaderElection: false
+  grpcProxy: null
+  hostAliases: null
+  hosts:
+  - peer0-org2.localho.st
+  image: hyperledger/fabric-peer
+  imagePullPolicy: Always
+  imagePullSecrets: null
+  istio:
+    hosts:
+    - peer0-org2.localho.st
+    ingressGateway: ingressgateway
+    port: 443
+  logging:
+    cauthdsl: info
+    gossip: info
+    grpc: info
+    ledger: info
+    level: info
+    msp: info
+    peer: info
+    policies: info
+  mspID: Org2MSP
+  peerVolumeMounts: null
+  podAnnotations: null
+  podLabels: null
+  replicas: 1
+  resources:
+    chaincode:
+      limits:
+        cpu: '1'
+        memory: 100Mi
+      requests:
+        cpu: 10m
+        memory: 10m
+    couchdb:
+      limits:
+        cpu: '1'
+        memory: 512Mi
+      requests:
+        cpu: 10m
+        memory: 10m
+    couchdbExporter: null
+    peer:
+      limits:
+        cpu: '1'
+        memory: 512Mi
+      requests:
+        cpu: 10m
+        memory: 128Mi
+    proxy: null
+  secret:
+    enrollment:
+      component:
+        cahost: org2-ca.localho.st
+        caname: ca
+        caport: 443
+        catls:
+          cacert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNXakNDQWdHZ0F3SUJBZ0lRWHI2TTJBN0oyMzZkVy9NL0Z2empWakFLQmdncWhrak9QUVFEQWpCU01STXcKRVFZRFZRUUdFd3BEWVd4cFptOXlibWxoTVFrd0J3WURWUVFIRXdBeENUQUhCZ05WQkFrVEFERVVNQklHQTFVRQpDaE1MU0hsd1pYSnNaV1JuWlhJeER6QU5CZ05WQkFzVEJrWmhZbkpwWXpBZUZ3MHlOakV3TURNeU16QTNNalJhCkZ3MHpOakV3TURReU16QTNNalJhTUZJeEV6QVJCZ05WQkFZVENrTmhiR2xtYjNKdWFXRXhDVEFIQmdOVkJBY1QKQURFSk1BY0dBMVVFQ1JNQU1SUXdFZ1lEVlFRS0V3dEllWEJsY214bFpHZGxjakVQTUEwR0ExVUVDeE1HUm1GaQpjbWxqTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFQVVrMWZoWGxaeGxWZEFWZXlYNk1DeG9xCnh2RFBKcDV3aituL0FIVzd6SDE2cSsreS9kVDNGc1h0VGdta3ZHWnk0cTdmY29zc1UzNDBpbXI5TjErc1g2T0IKdURDQnRUQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0hRWURWUjBsQkJZd0ZBWUlLd1lCQlFVSEF3SUdDQ3NHQVFVRgpCd01CTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSU5ZMWdKdVZLWkI1Q3BtSW5ybklqMnE3Clh6UDB6R1dpVVgvdG9lbENDbjdlTUVnR0ExVWRFUVJCTUQrQ0NXeHZZMkZzYUc5emRJSUhiM0puTWkxallZSVAKYjNKbk1pMWpZUzVrWldaaGRXeDBnaEp2Y21jeUxXTmhMbXh2WTJGc2FHOHVjM1NIQkg4QUFBRXdDZ1lJS29aSQp6ajBFQXdJRFJ3QXdSQUlnQ0VrUTVPV082SkdrNk5Vdndxb09ybWRES3hnaVl6WGxBNXVYY1NZRVMxa0NJRW4xClBmMmhFV2NzeWYrcG40KzU2NlE4NjRpZ1ZLNWFOMlhlSkNkaTRRaksKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+          secretRef: null
+        enrollid: peer
+        enrollsecret: peerpw
+        external: null
+        vault: null
+      tls:
+        cahost: org2-ca.localho.st
+        caname: tlsca
+        caport: 443
+        catls:
+          cacert: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNXakNDQWdHZ0F3SUJBZ0lRWHI2TTJBN0oyMzZkVy9NL0Z2empWakFLQmdncWhrak9QUVFEQWpCU01STXcKRVFZRFZRUUdFd3BEWVd4cFptOXlibWxoTVFrd0J3WURWUVFIRXdBeENUQUhCZ05WQkFrVEFERVVNQklHQTFVRQpDaE1MU0hsd1pYSnNaV1JuWlhJeER6QU5CZ05WQkFzVEJrWmhZbkpwWXpBZUZ3MHlOakV3TURNeU16QTNNalJhCkZ3MHpOakV3TURReU16QTNNalJhTUZJeEV6QVJCZ05WQkFZVENrTmhiR2xtYjNKdWFXRXhDVEFIQmdOVkJBY1QKQURFSk1BY0dBMVVFQ1JNQU1SUXdFZ1lEVlFRS0V3dEllWEJsY214bFpHZGxjakVQTUEwR0ExVUVDeE1HUm1GaQpjbWxqTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFQVVrMWZoWGxaeGxWZEFWZXlYNk1DeG9xCnh2RFBKcDV3aituL0FIVzd6SDE2cSsreS9kVDNGc1h0VGdta3ZHWnk0cTdmY29zc1UzNDBpbXI5TjErc1g2T0IKdURDQnRUQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0hRWURWUjBsQkJZd0ZBWUlLd1lCQlFVSEF3SUdDQ3NHQVFVRgpCd01CTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3S1FZRFZSME9CQ0lFSU5ZMWdKdVZLWkI1Q3BtSW5ybklqMnE3Clh6UDB6R1dpVVgvdG9lbENDbjdlTUVnR0ExVWRFUVJCTUQrQ0NXeHZZMkZzYUc5emRJSUhiM0puTWkxallZSVAKYjNKbk1pMWpZUzVrWldaaGRXeDBnaEp2Y21jeUxXTmhMbXh2WTJGc2FHOHVjM1NIQkg4QUFBRXdDZ1lJS29aSQp6ajBFQXdJRFJ3QXdSQUlnQ0VrUTVPV082SkdrNk5Vdndxb09ybWRES3hnaVl6WGxBNXVYY1NZRVMxa0NJRW4xClBmMmhFV2NzeWYrcG40KzU2NlE4NjRpZ1ZLNWFOMlhlSkNkaTRRaksKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+          secretRef: null
+        csr:
+          cn: ''
+          hosts:
+          - 127.0.0.1
+          - localhost
+          - 192.168.56.10
+          - 192.168.56.11
+          - 192.168.56.12
+          - org2-peer0
+          - org2-peer0.default
+          - peer0-org2.localho.st
+        enrollid: peer
+        enrollsecret: peerpw
+        external: null
+        vault: null
+  service:
+    type: ClusterIP
+  serviceMonitor:
+    enabled: true
+    interval: 5s
+    scrapeTimeout: 4s
+    sampleLimit: 0
+    labels:
+      release: prometheus
+  stateDb: leveldb
+  storage:
+    chaincode:
+      accessMode: ReadWriteOnce
+      size: 5Gi
+      storageClass: local-path
+    couchdb:
+      accessMode: ReadWriteOnce
+      size: 5Gi
+      storageClass: local-path
+    peer:
+      accessMode: ReadWriteOnce
+      size: 5Gi
+      storageClass: local-path
+  tag: 2.5.5
+  tolerations: null
+  traefik: null
+  updateCertificateTime: null
+  volumes: null

@@ -1,0 +1,53 @@
+{
+  "alvo": "chaincode",
+  "tipo": "abrupta",
+  "pod_derrubado": "vinculo-5f649594df-frq86",
+  "no": "worker1",
+  "pod_substituto": "vinculo-5f649594df-frq86",
+  "rto_infraestrutura_s": 8.452,
+  "ready_observado_s": 8.894,
+  "inicio_carga_utc": "2026-11-21T13:36:46.910084+00:00",
+  "falha_utc": "2026-11-21T13:37:47.548035+00:00",
+  "parametros": {
+    "tps": 25,
+    "duracao_s": 300,
+    "atraso_s": 60,
+    "populacao": 500,
+    "workers": 2,
+    "fracao_escrita": 0.5
+  },
+  "rto_servico_s": null,
+  "servico_por_fluxo": {
+    "emitir": {
+      "base_lat_p95_s": 2.097,
+      "falhas_apos_falha": 1000,
+      "primeira_falha_s": 0.915,
+      "ultima_falha_s": 299.307,
+      "rto_servico_s": null,
+      "lat_max_apos_falha_s": 3.133,
+      "latencia_normal_apos_s": null,
+      "sucesso": 2752,
+      "falhas": 1000
+    },
+    "verificar": {
+      "base_lat_p95_s": 0.033,
+      "falhas_apos_falha": 984,
+      "primeira_falha_s": 1.018,
+      "ultima_falha_s": 239.836,
+      "rto_servico_s": null,
+      "lat_max_apos_falha_s": 2.168,
+      "latencia_normal_apos_s": 10,
+      "sucesso": 2766,
+      "falhas": 984
+    }
+  },
+  "divergencia_max_blocos": 0,
+  "convergencia_ledger_s": 0.0,
+  "nos_notready_inesperados": [
+    "worker1"
+  ],
+  "soft_lockups_durante": {
+    "worker1": 1
+  },
+  "execucao_valida": false
+}

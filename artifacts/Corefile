@@ -1,0 +1,30 @@
+.:53 {
+        errors
+        health {
+           lameduck 5s
+        }
+        ready
+        rewrite name exact peer0-org1.localho.st org1-peer0.default.svc.cluster.local answer auto
+        rewrite name exact peer0-org2.localho.st org2-peer0.default.svc.cluster.local answer auto
+        rewrite name exact orderer0-ord.localho.st ord-node1.default.svc.cluster.local answer auto
+        hosts {
+           192.168.56.200 org1-ca.localho.st
+           192.168.56.200 org2-ca.localho.st
+           192.168.56.200 ord-ca.localho.st
+           192.168.56.200 admin-orderer0-ord.localho.st
+           fallthrough
+        }
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf {
+           max_concurrent 1000
+        }
+        cache 30
+        loop
+        reload
+        loadbalance
+}

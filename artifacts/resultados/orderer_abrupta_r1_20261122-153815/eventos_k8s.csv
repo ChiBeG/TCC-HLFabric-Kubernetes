@@ -1,0 +1,14 @@
+t,tipo,nome,ready,no,fase,t_rel_s
+1795361896.5680518,no,control-plane,True,control-plane,,-115.9
+1795361896.5680518,no,worker1,True,worker1,,-115.9
+1795361896.5680518,no,worker2,True,worker2,,-115.9
+1795361896.5680518,pod,hlf-operator-controller-manager-b76b99974-pfjtw,True,worker2,Running,-115.9
+1795361896.5680518,pod,ord-ca-7875c75dff-gqnx6,True,worker2,Running,-115.9
+1795361896.5680518,pod,ord-node1-54b985d874-p76xx,True,worker1,Running,-115.9
+1795361896.5680518,pod,org1-ca-5fb854bd6c-j59wf,True,worker2,Running,-115.9
+1795361896.5680518,pod,org1-peer0-bffc5946b-wrm99,True,worker1,Running,-115.9
+1795361896.5680518,pod,org2-ca-6f686f86dc-bxw8s,True,worker2,Running,-115.9
+1795361896.5680518,pod,org2-peer0-7cf8c66b98-d46tz,True,worker2,Running,-115.9
+1795361896.5680518,pod,vinculo-686c48c5c7-5pbkv,True,worker1,Running,-115.9
+1795362014.3897328,pod,ord-node1-54b985d874-p76xx,False,worker1,Running,1.9
+1795362033.0587792,pod,ord-node1-54b985d874-p76xx,True,worker1,Running,20.6

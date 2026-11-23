@@ -1,0 +1,49 @@
+{
+  "alvo": "orderer",
+  "tipo": "abrupta",
+  "pod_derrubado": "ord-node1-54b985d874-vgfl9",
+  "no": "worker1",
+  "pod_substituto": "ord-node1-54b985d874-vgfl9",
+  "rto_infraestrutura_s": 55.572,
+  "ready_observado_s": 56.241,
+  "inicio_carga_utc": "2026-11-22T16:51:13.413495+00:00",
+  "falha_utc": "2026-11-22T16:52:14.427912+00:00",
+  "parametros": {
+    "tps": 25,
+    "duracao_s": 300,
+    "atraso_s": 60,
+    "populacao": 500,
+    "workers": 2,
+    "fracao_escrita": 0.5
+  },
+  "rto_servico_s": 71.685,
+  "servico_por_fluxo": {
+    "emitir": {
+      "base_lat_p95_s": 2.127,
+      "falhas_apos_falha": 884,
+      "primeira_falha_s": 0.828,
+      "ultima_falha_s": 69.471,
+      "rto_servico_s": 71.685,
+      "lat_max_apos_falha_s": 10.364,
+      "latencia_normal_apos_s": null,
+      "sucesso": 2868,
+      "falhas": 884
+    },
+    "verificar": {
+      "base_lat_p95_s": 0.03,
+      "falhas_apos_falha": 0,
+      "primeira_falha_s": null,
+      "ultima_falha_s": null,
+      "rto_servico_s": 0.0,
+      "lat_max_apos_falha_s": 8.359,
+      "latencia_normal_apos_s": 0,
+      "sucesso": 3750,
+      "falhas": 0
+    }
+  },
+  "divergencia_max_blocos": 2,
+  "convergencia_ledger_s": 80.985,
+  "nos_notready_inesperados": [],
+  "soft_lockups_durante": {},
+  "execucao_valida": true
+}

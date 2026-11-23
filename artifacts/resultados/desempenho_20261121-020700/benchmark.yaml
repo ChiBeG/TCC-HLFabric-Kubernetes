@@ -1,0 +1,160 @@
+test:
+  name: desempenho-vinculo
+  workers:
+    number: 2
+  rounds:
+  - label: emitir-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/emitir.js
+      arguments:
+        serie: 105
+    txNumber: 300
+  - label: emitir-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/emitir.js
+      arguments:
+        serie: 106
+    txNumber: 750
+  - label: emitir-50
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: workload/emitir.js
+      arguments:
+        serie: 107
+    txNumber: 1500
+  - label: emitir-100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 100
+    workload:
+      module: workload/emitir.js
+      arguments:
+        serie: 108
+    txNumber: 3000
+  - label: emitir-150
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 150
+    workload:
+      module: workload/emitir.js
+      arguments:
+        serie: 109
+    txNumber: 4500
+  - label: verificar-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/verificar.js
+      arguments:
+        serie: 105
+        populacao: 150
+    txNumber: 300
+  - label: verificar-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/verificar.js
+      arguments:
+        serie: 105
+        populacao: 150
+    txNumber: 750
+  - label: verificar-50
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: workload/verificar.js
+      arguments:
+        serie: 105
+        populacao: 150
+    txNumber: 1500
+  - label: verificar-100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 100
+    workload:
+      module: workload/verificar.js
+      arguments:
+        serie: 105
+        populacao: 150
+    txNumber: 3000
+  - label: verificar-150
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 150
+    workload:
+      module: workload/verificar.js
+      arguments:
+        serie: 105
+        populacao: 150
+    txNumber: 4500
+  - label: revogar-10
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 10
+    workload:
+      module: workload/revogar.js
+      arguments:
+        serie: 105
+    txNumber: 300
+  - label: revogar-25
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 25
+    workload:
+      module: workload/revogar.js
+      arguments:
+        serie: 106
+    txNumber: 750
+  - label: revogar-50
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 50
+    workload:
+      module: workload/revogar.js
+      arguments:
+        serie: 107
+    txNumber: 1500
+  - label: revogar-100
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 100
+    workload:
+      module: workload/revogar.js
+      arguments:
+        serie: 108
+    txNumber: 3000
+  - label: revogar-150
+    rateControl:
+      type: fixed-rate
+      opts:
+        tps: 150
+    workload:
+      module: workload/revogar.js
+      arguments:
+        serie: 109
+    txNumber: 4500

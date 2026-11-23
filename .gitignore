@@ -1,0 +1,19 @@
+# --- Segredos (obrigatório) ---
+.vagrant/                      # estado das VMs e chaves SSH privadas do Vagrant
+artifacts/id_cluster*          # chave SSH compartilhada entre os nós
+artifacts/join.sh              # token de adesão do kubeadm
+artifacts/kubeconfig*          # certificado de admin do cluster
+*.pem
+*_sk                           # chaves privadas do Fabric, se algum dia forem copiadas
+**/keystore/
+
+# --- Artefatos grandes ou gerados ---
+*.tar                          # imagem do chaincode exportada
+node_modules/
+__pycache__/
+*.pyc
+
+# --- Resultados brutos (grandes) ---
+artifacts/resultados/*/txlog*.csv
+artifacts/resultados/*/caliper.log
+artifacts/resultados/*/prom_*.csv
